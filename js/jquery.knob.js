@@ -668,8 +668,9 @@
                     }
                 );
 
-            this.$c.bind("mousewheel DOMMouseScroll", mw);
-            this.$.bind("mousewheel DOMMouseScroll", mw)
+            // Commented out to disable mousewheel scrolling until feature is supported
+            // this.$c.bind("mousewheel DOMMouseScroll", mw);
+            // this.$.bind("mousewheel DOMMouseScroll", mw)
         };
 
         this.init = function () {
