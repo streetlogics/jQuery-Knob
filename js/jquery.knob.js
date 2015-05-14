@@ -99,6 +99,7 @@
                     // Config
                     min: this.$.data('min') !== undefined ? this.$.data('min') : 0,
                     max: this.$.data('max') !== undefined ? this.$.data('max') : 100,
+                    scroll: this.$.data('scroll') !== 'false' ? true : false,
                     stopper: true,
                     readOnly: this.$.data('readonly') || (this.$.attr('readonly') === 'readonly'),
 
@@ -669,8 +670,10 @@
                 );
 
             // Commented out to disable mousewheel scrolling until feature is supported
-            // this.$c.bind("mousewheel DOMMouseScroll", mw);
-            // this.$.bind("mousewheel DOMMouseScroll", mw)
+            if(this.o.scroll){
+                this.$c.bind("mousewheel DOMMouseScroll", mw);
+                this.$.bind("mousewheel DOMMouseScroll", mw)
+            }
         };
 
         this.init = function () {
